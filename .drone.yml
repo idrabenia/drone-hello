@@ -4,3 +4,9 @@ pipeline:
     commands:
       - npm i
       - node index.js
+
+services:
+  postgres:
+    image: postgres:9.4.5
+    environment:
+      - POSTGRES_USER=myapp
