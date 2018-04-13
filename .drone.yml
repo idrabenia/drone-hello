@@ -10,7 +10,7 @@ pipeline:
       commands:
         - node index.js
       when:
-       event: deployment
+        event: deployment
 
 services:
   postgres:
