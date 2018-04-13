@@ -11,6 +11,7 @@ pipeline:
         - node index.js
       when:
         event: deployment
+        environment: staging
 
 services:
   postgres:
