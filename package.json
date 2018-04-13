@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/idrabenia/drone-hello/issues"
   },
-  "homepage": "https://github.com/idrabenia/drone-hello#readme"
+  "homepage": "https://github.com/idrabenia/drone-hello#readme",
+  "dependencies": {
+    "pm2-logrotate": "^2.4.0"
+  }
 }
