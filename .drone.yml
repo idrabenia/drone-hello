@@ -8,6 +8,7 @@ pipeline:
   publish:
       image: plugins/ecr
       repo: test
+      region: us-west-1
       registry: 754058048930.dkr.ecr.us-west-1.amazonaws.com
       secrets: [ ecr_access_key, ecr_secret_key ]
       when:
