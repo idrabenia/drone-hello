@@ -6,7 +6,7 @@ pipeline:
       - node index.js
 
   publish:
-      image: plugins/docker
+      image: node:8
       commands:
         - node index.js
       when:
