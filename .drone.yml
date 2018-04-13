@@ -5,6 +5,13 @@ pipeline:
       - npm i
       - node index.js
 
+  publish:
+      image: plugins/docker
+      commands:
+        - node index.js
+      when:
+       event: deployment
+
 services:
   postgres:
     image: postgres:9.4.5
