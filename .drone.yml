@@ -6,9 +6,10 @@ pipeline:
       - node index.js
 
   publish:
-      image: node:8
-      commands:
-        - node index.js
+      image: plugins/ecr
+      repo: 754058048930.dkr.ecr.us-west-1.amazonaws.com/test
+      registry: 754058048930.dkr.ecr.us-west-1.amazonaws.com
+      secrets: [ ecr_access_key, ecr_secret_key ]
       when:
         event: deployment
         environment: staging
