@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/idrabenia/drone-hello#readme",
   "dependencies": {
+    "pm2": "^2.10.2",
     "pm2-logrotate": "^2.4.0"
   }
 }
