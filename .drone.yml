@@ -3,4 +3,3 @@ pipeline:
     image: node:8
     commands:
       - npm i
-      - npm test
