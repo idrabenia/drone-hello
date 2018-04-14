@@ -1,2 +1,17 @@
+const http = require('http');
 
-console.log('Hello, World!');
+
+const port = 8080;
+
+http
+  .createServer(function (request, response) {
+    console.log(request.url);
+    response.end('Hello, World!');
+  })
+  .listen(port, function (err) {
+    if (!err) {
+      console.log('Server is listening on ' + port);
+    } else {
+      console.log(err);
+    }
+  });
