@@ -27,7 +27,6 @@ pipeline:
     secrets: [ kubernetes_server, kubernetes_cert, kubernetes_token ]
     tag:
       - bld-${DRONE_BUILD_NUMBER}
-      - latest
 
 services:
   postgres:
