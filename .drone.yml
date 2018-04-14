@@ -12,8 +12,8 @@ pipeline:
       secrets: [ ecr_access_key, ecr_secret_key ]
       tag:
         - latest
-        - AT${DRONE_BUILD_CREATED}
-        - BLD${DRONE_BUILD_NUMBER}
+        - ${DRONE_BUILD_CREATED}
+        - BLD-${DRONE_BUILD_NUMBER}
         - "GIT-${DRONE_COMMIT:0:7}"
 #      when:
 #        event: deployment
