@@ -5,19 +5,28 @@ pipeline:
       - npm i
 
   publish:
-      image: plugins/ecr
-      repo: test
-      region: us-west-1
-      registry: 754058048930.dkr.ecr.us-west-1.amazonaws.com
-      secrets: [ ecr_access_key, ecr_secret_key ]
-      tag:
-        - latest
-        - ${DRONE_BUILD_CREATED}
-        - bld-${DRONE_BUILD_NUMBER}
-        - "git-${DRONE_COMMIT:0:7}"
-#      when:
-#        event: deployment
-#        environment: staging
+    image: plugins/ecr
+    repo: test
+    region: us-west-1
+    registry: 754058048930.dkr.ecr.us-west-1.amazonaws.com
+    secrets: [ ecr_access_key, ecr_secret_key ]
+    tag:
+      - latest
+      - ${DRONE_BUILD_CREATED}
+      - bld-${DRONE_BUILD_NUMBER}
+      - "git-${DRONE_COMMIT:0:7}"
+    when:
+      event: deployment
+      environment: staging
+
+  deploy:
+    image: quay.io/honestbee/drone-kubernetes
+    deployment: drone-hello-deployment
+    repo: 754058048930.dkr.ecr.us-west-1.amazonaws.com/test
+    container: drone-hello
+    tag:
+      - bld-${DRONE_BUILD_NUMBER}
+      - latest
 
 services:
   postgres:
