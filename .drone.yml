@@ -14,7 +14,7 @@ pipeline:
         - latest
         - on-${DRONE_BUILD_CREATED}
         - job-number-${DRONE_JOB_NUMBER}
-        - commit-${DRONE_COMMIT:0:7}
+        - "commit-${DRONE_COMMIT:0:7}"
 #      when:
 #        event: deployment
 #        environment: staging
