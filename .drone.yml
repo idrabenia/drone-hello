@@ -13,10 +13,10 @@ pipeline:
       tag:
         - latest
         - on-${DRONE_BUILD_CREATED}
-        - job-number-DRONE_JOB_NUMBER
-      when:
-        event: deployment
-        environment: staging
+        - job-number-${DRONE_JOB_NUMBER}
+#      when:
+#        event: deployment
+#        environment: staging
 
 services:
   postgres:
