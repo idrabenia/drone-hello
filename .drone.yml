@@ -12,7 +12,8 @@ pipeline:
       secrets: [ ecr_access_key, ecr_secret_key ]
       tag:
         - latest
-        - ${DRONE_COMMIT_SHA:0:7}
+        - on-${DRONE_BUILD_CREATED}
+        - job-number-DRONE_JOB_NUMBER
       when:
         event: deployment
         environment: staging
