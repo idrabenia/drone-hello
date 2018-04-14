@@ -24,9 +24,7 @@ pipeline:
     deployment: drone-hello-deployment
     repo: 754058048930.dkr.ecr.us-west-1.amazonaws.com/test
     container: drone-hello
-    kubernetes_server: ${kubernetes_server}
-    kubernetes_cert: ${kubernetes_cert}
-    kubernetes_token: ${kubernetes_token}
+    secrets: [ kubernetes_server, kubernetes_cert, kubernetes_token ]
     tag:
       - bld-${DRONE_BUILD_NUMBER}
       - latest
