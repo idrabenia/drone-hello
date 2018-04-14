@@ -20,7 +20,7 @@ pipeline:
       environment: staging
 
   deploy:
-    image: quay.io/honestbee/drone-kubernetes
+    image: honestbee/drone-kubernetes
     deployment: drone-hello-deployment
     repo: 754058048930.dkr.ecr.us-west-1.amazonaws.com/test
     container: drone-hello
