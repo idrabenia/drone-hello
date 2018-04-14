@@ -3,7 +3,6 @@ pipeline:
     image: node:8
     commands:
       - npm i
-      - node index.js
 
   publish:
       image: plugins/ecr
