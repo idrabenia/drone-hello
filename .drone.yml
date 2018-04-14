@@ -15,9 +15,9 @@ pipeline:
       - ${DRONE_BUILD_CREATED}
       - bld-${DRONE_BUILD_NUMBER}
       - "git-${DRONE_COMMIT:0:7}"
-    when:
-      event: deployment
-      environment: staging
+#    when:
+#      event: deployment
+#      environment: staging
 
   deploy:
     image: quay.io/honestbee/drone-kubernetes
