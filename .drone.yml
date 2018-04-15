@@ -13,9 +13,9 @@ pipeline:
     tag:
       - latest
       - ${DRONE_BUILD_CREATED}
-#    when:
-#      event: deployment
-#      environment: staging
+    when:
+      event: deployment
+      environment: staging
 
   deploy:
     image: quay.io/honestbee/drone-kubernetes
@@ -25,6 +25,9 @@ pipeline:
     secrets: [ kubernetes_server, kubernetes_cert, kubernetes_token ]
     tag:
       - ${DRONE_BUILD_CREATED}
+    when:
+      event: deployment
+      environment: staging
 
 services:
   postgres:
