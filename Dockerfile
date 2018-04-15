@@ -4,4 +4,6 @@ RUN mkdir -p /usr/local/app
 COPY . /usr/local/app
 
 WORKDIR /usr/local/app
-CMD npm i && node index.js
+RUN npm i
+
+CMD node index.js
