@@ -6,12 +6,12 @@ const port = 8081;
 http
   .createServer(function (request, response) {
     console.log(request.url);
-    response.end('Hello, World!');
+    response.end('Hello, Etherisc!');
   })
   .listen(port, function (err) {
     if (!err) {
       console.log('Server is listening on ' + port);
     } else {
-      console.log(err) ;
+      console.log(err);
     }
   });
