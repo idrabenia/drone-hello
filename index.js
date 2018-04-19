@@ -12,6 +12,6 @@ http
     if (!err) {
       console.log('Server is listening on ' + port);
     } else {
-      console.log(err);
+      console.log(err) ;
     }
   });
